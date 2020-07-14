@@ -10,7 +10,7 @@ const EditProvincia = ({ provincia }) => {
     try {
       const body = { nombre_provincia };
       const response = await fetch(
-        `http://localhost:5000/ciudadanos_pern/${provincia.cod_provincia}`,
+        `http://localhost:5000/provincia/${provincia.cod_provincia}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -28,7 +28,7 @@ const EditProvincia = ({ provincia }) => {
     <Fragment>
       <button
         type="button"
-        class="btn btn-warning"
+        className="btn btn-warning"
         data-toggle="modal"
         data-target={`#id${provincia.cod_provincia}`}
       >
@@ -39,17 +39,17 @@ const EditProvincia = ({ provincia }) => {
         id = id10
       */}
       <div
-        class="modal"
+        className="modal"
         id={`id${provincia.cod_provincia}`}
         onClick={() => setNombreProvincia(provincia.nombre_provincia)}
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Editar Provincia</h4>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title">Editar Provincia</h4>
               <button
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
                 onClick={() => setNombreProvincia(provincia.nombre_provincia)}
               >
@@ -57,7 +57,7 @@ const EditProvincia = ({ provincia }) => {
               </button>
             </div>
 
-            <div class="modal-body">
+            <div className="modal-body">
               <input
                 type="text"
                 className="form-control"
@@ -66,10 +66,10 @@ const EditProvincia = ({ provincia }) => {
               />
             </div>
 
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-warning"
+                className="btn btn-warning"
                 data-dismiss="modal"
                 onClick={e => updateNombreProvincia(e)}
               >
@@ -77,7 +77,7 @@ const EditProvincia = ({ provincia }) => {
               </button>
               <button
                 type="button"
-                class="btn btn-danger"
+                className="btn btn-danger"
                 data-dismiss="modal"
                 onClick={() => setNombreProvincia(provincia.nombre_provincia)}
               >

@@ -3,43 +3,43 @@ import React, { Fragment, useEffect, useState } from "react";
 import EditProvincia from "./EditProvincia";
 
 const ListProvincia = () => {
-  const [provincias, setProvincias] = useState([]);
+  const [provincia, setProvincia] = useState([]);
 
   //delete provincia function
 
   const deleteProvincia = async id => {
     try {
-      const deleteProvincia = await fetch(`http://localhost:5000/provincias/${id}`, {
+      const deleteProvincia = await fetch(`http://localhost:5000/provincia/${id}`, {
         method: "DELETE"
       });
 
-      setProvincias(provincias.filter(provincia => provincia.cod_provincia !== id));
+      setProvincia(provincia.filter(provincia => provincia.cod_provincia !== id));
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  const getProvincias = async () => {
+  const getProvincia = async () => {
     try {
-      const response = await fetch("http://localhost:5000/provincias");
+      const response = await fetch("http://localhost:5000/provincia");
       const jsonData = await response.json();
 
-      setProvincias(jsonData);
+      setProvincia(jsonData);
     } catch (err) {
       console.error(err.message);
     }
   };
 
   useEffect(() => {
-    getProvincias();
+    getProvincia();
   }, []);
 
-  console.log(provincias);
+  console.log(provincia);
 
   return (
     <Fragment>
       {" "}
-      <table class="table mt-5 text-center">
+      <table className="table mt-5 text-center">
         <thead>
           <tr>
             <th>Nombre Provincia</th>
@@ -53,7 +53,7 @@ const ListProvincia = () => {
             <td>Doe</td>
             <td>john@example.com</td>
           </tr> */}
-          {provincias.map(provincia => (
+          {provincia.map(provincia => (
             <tr key={provincia.cod_provincia}>
               <td>{provincia.nombre_provincia}</td>
               <td>

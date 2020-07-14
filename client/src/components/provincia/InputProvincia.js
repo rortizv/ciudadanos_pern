@@ -7,7 +7,7 @@ const InputProvincia = () => {
     e.preventDefault();
     try {
       const body = { nombre_provincia };
-      const response = await fetch("http://localhost:5000/ciudadanos_pern", {
+      const response = await fetch("http://localhost:5000/provincia", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
@@ -27,6 +27,7 @@ const InputProvincia = () => {
           type="text"
           className="form-control"
           value={nombre_provincia}
+          placeholder="Nombre PROVINCIA a agregar..."
           onChange={e => setNombreProvincia(e.target.value)}
         />
         <button className="btn btn-success ml-3">Agregar</button>
