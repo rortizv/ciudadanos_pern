@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.nav-links, nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.nav-item{
+  margin: 11px 10px 5px 10px;
+}
+
+.nav-item:hover {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  color: darkturquoise;
+  text-decoration: none;
+}
