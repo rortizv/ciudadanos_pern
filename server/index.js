@@ -10,7 +10,12 @@ app.use(express.urlencoded({extended: false}));
 
 
 
+
+
+
 //****** ROUTES *******//
+
+
 
 
 
@@ -178,6 +183,8 @@ app.delete("/persona/:id", async (req, res) => {
 
 
 
+
+
 //***MUNICIPIO***
 
 
@@ -255,6 +262,7 @@ app.delete("/municipio/:id", async (req, res) => {
     console.log(err.message);
   }
 });
+
 
 
 
@@ -421,6 +429,8 @@ app.delete("/censo_hecho/:id", async (req, res) => {
 
 
 
+
+
 //***DISTRITO***
 
 
@@ -582,6 +592,8 @@ app.delete("/censo_distrital_derecho/:id", async (req, res) => {
 
 
 
+
+
 //***CENSO DISTRITAL HECHO***
 
 
@@ -659,6 +671,8 @@ app.delete("/censo_distrital_hecho/:id", async (req, res) => {
     console.log(err.message);
   }
 });
+
+
 
 
 
