@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 import EditProvincia from "./EditProvincia";
+import InputProvincia from "./InputProvincia";
 
 const ListProvincia = () => {
   const [provincia, setProvincia] = useState([]);
@@ -39,6 +40,8 @@ const ListProvincia = () => {
   return (
     <Fragment>
       {" "}
+      <InputProvincia />
+      {/* <h1 className="text-center mt-5">PROVINCIA</h1> */}
       <table className="table mt-5 text-center">
         <thead>
           <tr>
@@ -73,6 +76,9 @@ const ListProvincia = () => {
       </table>
     </Fragment>
   );
+
+
+  
 };
 
 export default ListProvincia;

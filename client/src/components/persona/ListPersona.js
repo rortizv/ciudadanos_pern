@@ -39,9 +39,11 @@ const ListPersona = () => {
   return (
     <Fragment2>
       {" "}
+      <h1 className="text-center mt-5">PERSONA</h1>
       <table className="table mt-5 text-center">
         <thead>
           <tr>
+            <th>Numero doc</th>
             <th>Nombre</th>
             <th>Apellidos</th>
             <th>Fecha Nacim</th>
@@ -62,6 +64,7 @@ const ListPersona = () => {
           </tr> */}
           {persona.map(persona => (
             <tr key={persona.numero_doc}>
+              <td>{persona.numero_doc}</td>
               <td>{persona.nombre}</td>
               <td>{persona.apellidos}</td>
               <td>{persona.fecha_nacimiento}</td>

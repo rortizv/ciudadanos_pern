@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import './App.css';
 
-import Navbar from './components/navbar/navbar.js';
+import Home from './components/home/Home';
+
+import Navbar from './components/navbar/Navbar.js';
 
 import InputProvincia from "./components/provincia/InputProvincia";
 import ListProvincia from "./components/provincia/ListProvincia";
@@ -20,8 +22,9 @@ function App() {
     <Router>
       <Navbar />
         <Switch>
-          <Route path="/components/provincia/" component={ListProvincia} />
-          <Route path="/components/persona/" component={ListPersona} />
+          <Route path="/home" component={Home} />
+          <Route path="/provincia/" component={ListProvincia} />
+          <Route path="/persona/" component={ListPersona} />
         </Switch>
     </Router>
   );
