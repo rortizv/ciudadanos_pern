@@ -13,7 +13,7 @@ const InputProvincia = () => {
         body: JSON.stringify(body)
       });
 
-      window.location = "/";
+      window.location = "/provincia";
     } catch (err) {
       console.error(err.message);
     }
@@ -22,15 +22,15 @@ const InputProvincia = () => {
   return (
     <Fragment>
       <h1 className="text-center mt-5">PROVINCIA</h1>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+      <form className="d-flex mt-3" onSubmit={onSubmitForm}>
         <input
           type="text"
-          className="form-control"
+          className="form-control ml-5 mr-2"
           value={nombre_provincia}
           placeholder="Nombre PROVINCIA a agregar..."
           onChange={e => setNombreProvincia(e.target.value)}
         />
-        <button className="btn btn-success ml-3">Agregar</button>
+        <button className="btn btn-success ml-3 mr-5">Agregar</button>
       </form>
     </Fragment>
   );

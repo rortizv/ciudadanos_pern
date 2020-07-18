@@ -18,7 +18,7 @@ const EditProvincia = ({ provincia }) => {
         }
       );
 
-      window.location = "/";
+      window.location = "/provincia";
     } catch (err) {
       console.error(err.message);
     }
