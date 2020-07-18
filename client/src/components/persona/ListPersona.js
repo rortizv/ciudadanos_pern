@@ -1,6 +1,7 @@
-import React, { Fragment2, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import EditPersona from "./EditPersona";
+import InputPersona from "./InputPersona";
 
 const ListPersona = () => {
   const [persona, setPersona] = useState([]);
@@ -37,23 +38,22 @@ const ListPersona = () => {
   console.log(persona);
 
   return (
-    <Fragment2>
+    <Fragment>
       {" "}
-      <h1 className="text-center mt-5">PERSONA</h1>
+      <InputPersona />
       <table className="table mt-5 text-center">
         <thead>
           <tr>
             <th>Numero doc</th>
             <th>Nombre</th>
             <th>Apellidos</th>
-            <th>Fecha Nacim</th>
+            <th>Fecha nacim</th>
             <th>Tipo doc</th>
             <th>Edad</th>
             <th>Estatura</th>
-            <th>Situacion militar</th>
+            <th>Situacion milit</th>
             <th>Sexo</th>
             <th>Nivel estudios</th>
-            <th>Cod Municipio*</th>
           </tr>
         </thead>
         <tbody>
@@ -74,7 +74,6 @@ const ListPersona = () => {
               <td>{persona.situacion_militar}</td>
               <td>{persona.sexo}</td>
               <td>{persona.nivel_de_estudios}</td>
-              <td>{persona.fk_persona_cod_municipio}</td>
               <td>
                 <EditPersona persona={persona} />
               </td>
@@ -90,8 +89,11 @@ const ListPersona = () => {
           ))}
         </tbody>
       </table>
-    </Fragment2>
+    </Fragment>
   );
+
+
+  
 };
 
 export default ListPersona;

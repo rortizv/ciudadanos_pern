@@ -31,21 +31,3 @@ function App() {
 }
 
 export default App;
-
-
-//components
-
-/*import InputProvincia from "./components/provincia/InputProvincia";
-import ListProvincia from "./components/provincia/ListProvincia";
-import EditProvincia from "./components/provincia/EditProvincia";
-
-import InputPersona from "./components/persona/InputPersona";
-import ListPersona from "./components/persona/ListPersona";
-import EditPersona from "./components/persona/EditPersona";*/
-
-    // <Fragment>
-    //   <div className="container">
-    //     <InputProvincia />
-    //     <ListProvincia />
-    //   </div>
-    // </Fragment>

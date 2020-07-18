@@ -1,115 +1,118 @@
-import React, { Fragment2, useState } from "react";
+import React, { Fragment, useState } from "react";
 
 const InputPersona = () => {
-  const [numero_doc, nombre, apellidos, fecha_nacimiento, tipo_doc, edad, estatura, situacion_militar,
-    sexo, nivel_de_estudios, fk_persona_cod_municipio, setNumeroDoc, setNombre, setApellidos, setFechaNacimiento,
-    setTipoDoc, setEdad, setEstatura, setSituacionMilitar, setSexo, setFkPersonaCodMunicipio] = useState("");
+  const [nombre_provincia, setNombreProvincia] = useState("");
+  const [nombre, setNombrePersona] = useState("");
+  const [apellidos, setApellidosPersona] = useState("");
+  const [fecha_nacimiento, setFechaNacimientoPersona] = useState("");
+  const [tipo_doc, setTipoDocPersona] = useState("");
+  const [edad, setEdadPersona] = useState("");
+  const [estatura, setEstaturaPersona] = useState("");
+  const [situacion_militar, setSituacionMilitarPersona] = useState("");
+  const [sexo, setSexoPersona] = useState("");
+  const [nivel_de_estudios, setNivelEstudiosPersona] = useState("");
+  const [fk_persona_cod_municipio, setFkPersonaCodMunicipio] = useState("");
 
   const onSubmitForm = async e => {
     e.preventDefault();
     try {
-      const body = { numero_doc, nombre, apellidos, fecha_nacimiento, tipo_doc, edad, estatura, situacion_militar, sexo, nivel_de_estudios, fk_persona_cod_municipio };
+      const body = { nombre, apellidos, fecha_nacimiento, tipo_doc, edad, estatura, situacion_militar, sexo, nivel_de_estudios, fk_persona_cod_municipio };
       const response = await fetch("http://localhost:5000/persona", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });
 
-      window.location = "/";
+      window.location = "/persona";
     } catch (err) {
       console.error(err.message);
     }
   };
 
   return (
-    <Fragment2>
+    <Fragment>
       <h1 className="text-center mt-5">PERSONA</h1>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
-        <input
-            type="number"
-            className="form-control"
-            value={numero_doc}
-            placeholder="Número del documento..."
-            onChange={e => setNumeroDoc(e.target.value)}
-            />
-
-        <input
-            type="text"
-            className="form-control"
-            value={nombre}
-            placeholder="Nombre..."
-            onChange={e => setNombre(e.target.value)}
-            />
-
-        <input
-            type="text"
-            className="form-control"
-            value={apellidos}
-            placeholder="Apellidos..."
-            onChange={e => setApellidos(e.target.value)}
-            />
-
-        <input
-            type="date"
-            className="form-control"
-            value={fecha_nacimiento}
-            placeholder="Fecha nacimiento..."
-            onChange={e => setFechaNacimiento(e.target.value)}
-            />
-
-        <input
-            type="text"
-            className="form-control"
-            value={numero_doc}
-            placeholder="Tipo de documento..."
-            onChange={e => setTipoDoc(e.target.value)}
-            />
-
+      <form className="dmt-3 form-group" onSubmit={onSubmitForm}>
+        
         <input
           type="text"
-          className="form-control"
-          value={edad}
-          placeholder="Edad..."
-          onChange={e => setEdad(e.target.value)}
+          className="form-control m-2"
+          value={nombre}
+          placeholder="Nombre..."
+          onChange={e => setNombrePersona(e.target.value)}
         />
-
         <input
           type="text"
-          className="form-control"
-          value={estatura}
-          placeholder="Estatura..."
-          onChange={e => setEstatura(e.target.value)}
+          className="form-control m-2"
+          value={apellidos}
+          placeholder="Apellidos..."
+          onChange={e => setApellidosPersona(e.target.value)}
         />
         
-
+        
         <input
           type="text"
-          className="form-control"
+          className="form-control m-2"
+          value={fecha_nacimiento}
+          placeholder="Fecha de nacimiento..."
+          onChange={e => setFechaNacimientoPersona(e.target.value)}
+        />
+        <input
+          type="text"
+          className="form-control m-2"
+          value={tipo_doc}
+          placeholder="Tipo de documento..."
+          onChange={e => setTipoDocPersona(e.target.value)}
+        />
+        
+        
+        <input
+          type="text"
+          className="form-control m-2"
+          value={edad}
+          placeholder="Edad..."
+          onChange={e => setEdadPersona(e.target.value)}
+        />
+        <input
+          type="text"
+          className="form-control m-2"
+          value={estatura}
+          placeholder="Estatura..."
+          onChange={e => setEstaturaPersona(e.target.value)}
+        />
+        
+        
+        <input
+          type="text"
+          className="form-control m-2"
           value={situacion_militar}
           placeholder="Situación militar..."
-          onChange={e => setSituacionMilitar(e.target.value)}
+          onChange={e => setSituacionMilitarPersona(e.target.value)}
         />
-
         <input
           type="text"
-          className="form-control"
+          className="form-control m-2"
           value={sexo}
           placeholder="Sexo..."
-          onChange={e => setSexo(e.target.value)}
+          onChange={e => setSexoPersona(e.target.value)}
         />
-
         <input
           type="text"
-          className="form-control"
+          className="form-control m-2"
+          value={nivel_de_estudios}
+          placeholder="Nivel de estudios..."
+          onChange={e => setNivelEstudiosPersona(e.target.value)}
+        />
+        <input
+          type="text"
+          className="form-control m-2"
           value={fk_persona_cod_municipio}
-          placeholder="Código municipio..."
+          placeholder="Municipio..."
           onChange={e => setFkPersonaCodMunicipio(e.target.value)}
         />
-
-
-        <button className="btn btn-success ml-3">Agregar</button>
+        <button className="btn btn-success ml-3 mr-5">Agregar</button>
       </form>
-    </Fragment2>
+    </Fragment>
   );
 };
 
