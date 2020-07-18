@@ -33,7 +33,6 @@ const InputPersona = () => {
     <Fragment>
       <h1 className="text-center mt-5">PERSONA</h1>
       <form className="dmt-3 form-group" onSubmit={onSubmitForm}>
-        
         <input
           type="text"
           className="form-control m-2"
@@ -48,8 +47,6 @@ const InputPersona = () => {
           placeholder="Apellidos..."
           onChange={e => setApellidosPersona(e.target.value)}
         />
-        
-        
         <input
           type="text"
           className="form-control m-2"
@@ -64,8 +61,6 @@ const InputPersona = () => {
           placeholder="Tipo de documento..."
           onChange={e => setTipoDocPersona(e.target.value)}
         />
-        
-        
         <input
           type="text"
           className="form-control m-2"
@@ -80,8 +75,6 @@ const InputPersona = () => {
           placeholder="Estatura..."
           onChange={e => setEstaturaPersona(e.target.value)}
         />
-        
-        
         <input
           type="text"
           className="form-control m-2"

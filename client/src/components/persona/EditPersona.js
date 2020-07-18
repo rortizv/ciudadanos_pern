@@ -66,17 +66,134 @@ const EditPersona = ({ persona }) => {
                 className="close"
                 data-dismiss="modal"
                 onClick={() => setNombrePersona(persona.nombre)}
-              >
+              />
+                <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setApellidosPersona(persona.apellidos)}
+              />
+                <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setFechaNacimientoPersona(persona.fecha_nacimiento)}
+              />
+                <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setTipoDocPersona(persona.tipo_doc)}
+              />
+                <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setEdadPersona(persona.edad)}
+              />
+                <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setEstaturaPersona(persona.estatura)}
+              />
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setSituacionMilitarPersona(persona.situacion_militar)}
+              />
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setSexoPersona(persona.sexo)}
+              />
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setNivelEstudiosPersona(persona.nivel_de_estudios)}
+              />
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={() => setFkPersonaCodMunicipio(persona.fk_persona_cod_municipio)}
+              />
                 &times;
-              </button>
             </div>
 
             <div className="modal-body">
+              Nombre:
               <input
                 type="text"
                 className="form-control"
                 value={nombre}
                 onChange={e => setNombrePersona(e.target.value)}
+              />
+              Apellidos:
+              <input
+                type="text"
+                className="form-control"
+                value={apellidos}
+                onChange={e => setApellidosPersona(e.target.value)}
+              />
+              Fecha Nacimiento:
+              <input
+                type="text"
+                className="form-control"
+                value={fecha_nacimiento}
+                onChange={e => setFechaNacimientoPersona(e.target.value)}
+              />
+              Tipo documento:
+              <input
+                type="text"
+                className="form-control"
+                value={tipo_doc}
+                onChange={e => setTipoDocPersona(e.target.value)}
+              />
+              Edad:
+              <input
+                type="text"
+                className="form-control"
+                value={edad}
+                onChange={e => setEdadPersona(e.target.value)}
+              />
+              Estatura:
+              <input
+                type="text"
+                className="form-control"
+                value={estatura}
+                onChange={e => setEstaturaPersona(e.target.value)}
+              />
+              Situacion militar:
+              <input
+                type="text"
+                className="form-control"
+                value={situacion_militar}
+                onChange={e => setSituacionMilitarPersona(e.target.value)}
+              />
+              Sexo:
+              <input
+                type="text"
+                className="form-control"
+                value={sexo}
+                onChange={e => setSexoPersona(e.target.value)}
+              />
+              Nivel de estudios:
+              <input
+                type="text"
+                className="form-control"
+                value={nivel_de_estudios}
+                onChange={e => setNivelEstudiosPersona(e.target.value)}
+              />
+              Municipio:
+              <input
+                type="text"
+                className="form-control"
+                value={fk_persona_cod_municipio}
+                onChange={e => setFkPersonaCodMunicipio(e.target.value)}
               />
             </div>
 
